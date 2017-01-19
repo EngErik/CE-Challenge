@@ -22,7 +22,7 @@ public enum SerializationLabel {
     CPF("cpf"),
     ID("id"),
     STATUS("status"),   
-    USER_NAME("userName");
+    USER_NAME("name");
 
     private String labelValue;
     

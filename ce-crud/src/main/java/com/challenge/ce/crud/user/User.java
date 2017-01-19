@@ -38,13 +38,13 @@ import lombok.Setter;
 public class User {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "ID_USER", nullable = false, updatable = false)
     private Long id;
     
     @Setter(AccessLevel.NONE)
     @NotNull(message = "Name cannot be null")
-    @Column(name = "USER_NAME")
+    @Column(name = "NAME")
     private String name;
     
     @Setter(AccessLevel.NONE)
