@@ -19,6 +19,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -34,6 +35,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "CE_USER")
+@AllArgsConstructor
 @Entity
 public class User {
     
@@ -71,6 +73,9 @@ public class User {
     /**
      * Construtor padrao da classe User. 
      */
+    private User() {
+    }
+    
     public User(final String name, final String cpf, final BigDecimal balance) {
         this.name = name;
         this.cpf = cpf;

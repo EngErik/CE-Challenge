@@ -6,8 +6,10 @@
 package com.challenge.ce.crud.wrappers;
 
 import com.challenge.ce.crud.serializers.UserWrapperDeserializer;
+import com.challenge.ce.crud.serializers.UserWrapperSerializer;
 import com.challenge.ce.crud.user.User;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,6 +23,7 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
+@JsonSerialize(using = UserWrapperSerializer.class)
 @JsonDeserialize(using = UserWrapperDeserializer.class)
 public class UserWrapper {
     

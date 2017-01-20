@@ -25,6 +25,10 @@ public class UserServices {
         return createdUser;
     }
     
+    public User getUser(final long id) {
+        return userRepository.findOne(id);
+    }
+    
     @Autowired
     public void setUserRepository(final UserRepository userRepository) {
         this.userRepository = userRepository;

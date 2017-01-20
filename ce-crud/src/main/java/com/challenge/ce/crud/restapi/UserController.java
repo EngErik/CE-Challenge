@@ -8,6 +8,7 @@ package com.challenge.ce.crud.restapi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,6 +34,11 @@ public class UserController {
     public ResponseEntity<UserWrapper> createUser(@RequestBody final UserWrapper userWrapper) {
         final User user = facade.createUser(userWrapper.getUser());
         return ResponseEntity.ok().body(new UserWrapper(user));
+    }
+    
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public UserWrapper UserWrapper  (@PathVariable("id") final long id) {
+        return new UserWrapper(facade.getUser(id));
     }
     
     @Autowired

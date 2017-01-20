@@ -24,6 +24,10 @@ public class UserFacade {
         return userServices.createUser(user);
     }
     
+    public User getUser(final long id) {
+        return userServices.getUser(id);
+    }
+    
     @Autowired
     public void setUserServices(final UserServices userServices) {
         this.userServices = userServices;
