@@ -15,7 +15,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * A classe <code>UserWrapper</code> encapsula um objeto Chat para a
+ * A classe <code>UserWrapper</code> encapsula um objeto <code>User</code> para a
  * sua serializacao e deserializacao
  *
  * @author Erik Paula
