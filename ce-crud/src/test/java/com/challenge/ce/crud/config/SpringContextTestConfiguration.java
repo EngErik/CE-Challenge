@@ -22,7 +22,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  */
 @Configuration
 @ComponentScan(basePackages = {"com.challenge.ce.crud.serializers", "com.challenge.ce.crud.user"})
-@EnableJpaRepositories(basePackages = {"com.challenge.ce.crud.user"})
+@EnableJpaRepositories(basePackages = {"com.challenge.ce.crud.user", "com.challenge.ce.crud.atm"})
 @Import({DataBaseTestBeans.class})
 @PropertySource({"classpath:datasource.properties"})
 @EnableLoadTimeWeaving

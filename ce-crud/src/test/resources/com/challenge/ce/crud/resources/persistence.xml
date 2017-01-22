@@ -9,6 +9,8 @@
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 				
 			<class>com.challenge.ce.crud.user.User</class>
+			<class>com.challenge.ce.crud.atm.Atm</class>
+			<class>com.challenge.ce.crud.atm.BankNote</class>
 <!-- 	<properties> -->
 <!-- 		<property name="dialect" value="org.hibernate.dialect.HSQLDialect"/> -->
 <!--         <property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver"/> -->

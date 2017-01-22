@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @EnableTransactionManagement
 @ComponentScan("com.challenge.ce.crud")
-@EnableJpaRepositories("com.challenge.ce.crud.user")
+@EnableJpaRepositories(basePackages = {"com.challenge.ce.crud.user", "com.challenge.crud.atm"})
 @SpringBootApplication
 public class CeCrudApplication {
 

@@ -18,6 +18,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.challenge.ce.crud.enums.SystemStatus;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -58,7 +60,7 @@ public class User {
     @NotNull(message = "Status cannot be null")
     @Column(name = "STATUS")
     @Enumerated(EnumType.ORDINAL)
-    private UserStatus status;
+    private SystemStatus status;
     
     @Setter(AccessLevel.NONE)
     @NotNull(message = "Creation date cannot be null")
@@ -78,7 +80,7 @@ public class User {
         }
         this.name = name;
         this.balance = balance;
-        this.status = UserStatus.ACTIVE;
+        this.status = SystemStatus.ACTIVE;
         this.creationDate = new Date();
     }
     
