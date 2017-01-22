@@ -50,11 +50,6 @@ public class User {
     private String name;
     
     @Setter(AccessLevel.NONE)
-    @NotNull(message = "CPF cannot be null")
-    @Column(name = "CPF", length = 11)
-    private String cpf;
-    
-    @Setter(AccessLevel.NONE)
     @NotNull(message = "Balance cannot be null")
     @Column(name = "BALANCE")
     private BigDecimal balance;
@@ -72,13 +67,16 @@ public class User {
     
     /**
      * Construtor padrao da classe User. 
+     * 
      */
     private User() {
     }
     
     public User(final String name, final String cpf, final BigDecimal balance) {
+        if (balance.equals(BigDecimal.ZERO) || balance.signum() == -1) {
+            throw new IllegalArgumentException("User ballance cannot be 0 or negative!");
+        }
         this.name = name;
-        this.cpf = cpf;
         this.balance = balance;
         this.status = UserStatus.ACTIVE;
         this.creationDate = new Date();

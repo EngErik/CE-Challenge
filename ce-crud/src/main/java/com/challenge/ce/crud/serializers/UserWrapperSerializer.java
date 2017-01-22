@@ -6,7 +6,6 @@
 package com.challenge.ce.crud.serializers;
 
 import static com.challenge.ce.crud.serializers.SerializationLabel.BALANCE;
-import static com.challenge.ce.crud.serializers.SerializationLabel.CPF;
 import static com.challenge.ce.crud.serializers.SerializationLabel.ID;
 import static com.challenge.ce.crud.serializers.SerializationLabel.STATUS;
 import static com.challenge.ce.crud.serializers.SerializationLabel.USER_NAME;
@@ -42,7 +41,6 @@ public class UserWrapperSerializer extends JsonSerializer<UserWrapper>{
         
         generator.writeNumberField(ID, user.getId());
         generator.writeStringField(USER_NAME, user.getName());
-        generator.writeStringField(CPF, user.getCpf());
         generator.writeStringField(STATUS, user.getStatus());
         generator.writeNumberField(BALANCE, user.getBalance());
         

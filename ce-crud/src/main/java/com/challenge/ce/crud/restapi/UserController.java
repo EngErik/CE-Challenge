@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.challenge.ce.crud.exceptions.DuplicatedUserException;
 import com.challenge.ce.crud.user.User;
 import com.challenge.ce.crud.user.UserFacade;
 import com.challenge.ce.crud.wrappers.UserWrapper;
@@ -31,7 +32,7 @@ public class UserController {
     private UserFacade facade;
     
     @RequestMapping(value = "/user", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<UserWrapper> createUser(@RequestBody final UserWrapper userWrapper) {
+    public ResponseEntity<UserWrapper> createUser(@RequestBody final UserWrapper userWrapper) throws DuplicatedUserException {
         final User user = facade.createUser(userWrapper.getUser());
         return ResponseEntity.ok().body(new UserWrapper(user));
     }

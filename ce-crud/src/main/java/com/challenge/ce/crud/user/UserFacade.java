@@ -8,6 +8,8 @@ package com.challenge.ce.crud.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.challenge.ce.crud.exceptions.DuplicatedUserException;
+
 /**
  * A classe <code>UserFacade</code> expoe as funcionalidades
  * referentes a usuarios.
@@ -20,7 +22,7 @@ public class UserFacade {
 
     private UserServices userServices;
     
-    public User createUser(final User user) {
+    public User createUser(final User user) throws DuplicatedUserException {
         return userServices.createUser(user);
     }
     
